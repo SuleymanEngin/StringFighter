@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <RepositoryUrl>https://github.com/SuleymanEngin/StringFighter</RepositoryUrl>
+    <Description>Simple but functional string functions that I think might be useful.</Description>
   </PropertyGroup>
 
 </Project>

@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F64F90EC-AB75-4214-85A8-BF5C967A260B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringFighter.StringExtractors", "StringFighter.StringExtractors\StringFighter.StringExtractors.csproj", "{E2852963-7DBF-44AE-99AC-9089651E0124}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringFighter.StringExtractors", "StringFighter.StringExtractors\StringFighter.StringExtractors.csproj", "{E2852963-7DBF-44AE-99AC-9089651E0124}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0EE33FB3-2EFF-4F6B-9891-1E4C425D7779}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringFighter.StringExtractors.Tests", "StringFighter.StringExtractors.Tests\StringFighter.StringExtractors.Tests\StringFighter.StringExtractors.Tests.csproj", "{5E66304E-1CE9-4D7A-AA23-98453C034EA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringFighter.StringExtractors.Tests", "StringFighter.StringExtractors.Tests\StringFighter.StringExtractors.Tests\StringFighter.StringExtractors.Tests.csproj", "{5E66304E-1CE9-4D7A-AA23-98453C034EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Executer", "Executer\Executer.csproj", "{0A4C127E-A7DA-43C8-9665-4DFBB584FC39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Executer", "Executer\Executer.csproj", "{0A4C127E-A7DA-43C8-9665-4DFBB584FC39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

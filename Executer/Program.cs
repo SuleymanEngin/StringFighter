@@ -1,5 +1,9 @@
 ﻿using StringFighter.StringExtractors;
+using StringFighter.StringExtractors.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 
 namespace Executer
 {
@@ -7,12 +11,18 @@ namespace Executer
     {
         static void Main(string[] args)
         {
-        
-            ChangingValueExtractor changingExtractor = new ChangingValueExtractor("tarafıerndan satılaktadır.  {} ");
 
-            var result = changingExtractor.ExtractChangingValue("tarafından satılaktadır.  annenin amı ");
+            ChangingValuesExtractor changingValuesExtractor = new ChangingValuesExtractor("{} naber? {}'le görüştün mü? tam orospu cocugu ya o. {} denen ibneyle takılıyomus {}");
 
-            Console.WriteLine("Hello World!");
+            var value = "cemalettin dal yarrak naber? ali'le görüştün mü? tam orospu cocugu ya o. kaşar ahmet denen ibneyle takılıyomus aksarayda";
+
+            changingValuesExtractor.ExtractChangingValues(ref value);
+
+        }
+
+        public static void Testt(IndexStepModel indexStepModel)
+        {
+            indexStepModel.Value = "cemalettin";
         }
     }
 }
