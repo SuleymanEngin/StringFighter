@@ -23,7 +23,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
-
+/Executer
 # Roslyn cache directories
 *.ide/
 
