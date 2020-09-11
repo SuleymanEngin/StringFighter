@@ -20,7 +20,6 @@ namespace StringFighter.StringExtractors
             if (template.AllIndexesOf("{}").Count <= 1)
                 throw new FormatException("template must contain more than one variable");
 
-
             _staticValues = template.Split("{}", StringSplitOptions.RemoveEmptyEntries);
         }
 
