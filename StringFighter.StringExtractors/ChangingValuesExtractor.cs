@@ -1,10 +1,7 @@
 ﻿using StringFighter.StringExtractors.Exceptions;
 using StringFighter.StringExtractors.Extensions;
-using StringFighter.StringExtractors.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace StringFighter.StringExtractors
 {
@@ -12,7 +9,7 @@ namespace StringFighter.StringExtractors
     {
         string[] _staticValues;
 
-        public ChangingValuesExtractor(string template)
+        public ChangingValuesExtractor(ref string template)
         {
             if (string.IsNullOrWhiteSpace(template))
                 throw new ArgumentNullException("template cannot be null or empty!");

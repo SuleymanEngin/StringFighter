@@ -6,4 +6,9 @@
     <Description>Simple but functional string functions that I think might be useful.</Description>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="nuget.exe" />
+    <None Remove="StringFighter.StringExtractors.nuspec" />
+  </ItemGroup>
+
 </Project>

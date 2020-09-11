@@ -13,7 +13,8 @@ namespace StringFighter.StringExtractors.Tests
         {
             ChangingValueExtractor changingValueExtractor = new ChangingValueExtractor("bu ürün {} tarafından satılmaktadır.");
 
-            var result = changingValueExtractor.ExtractChangingValue("bu ürün ahmet erdal tarafından satılmaktadır.");
+            var input = "bu ürün ahmet erdal tarafından satılmaktadır.";
+            var result = changingValueExtractor.ExtractChangingValue(ref input);
 
             Assert.Equal("ahmet erdal", result);
         }
@@ -23,7 +24,9 @@ namespace StringFighter.StringExtractors.Tests
         {
             ChangingValueExtractor changingValueExtractor = new ChangingValueExtractor("bu adamın adı {}");
 
-            var result = changingValueExtractor.ExtractChangingValue("bu adamın adı kemalettin erbaş yanyatmaz düzkalkmazdır");
+            var input = "bu adamın adı kemalettin erbaş yanyatmaz düzkalkmazdır";
+
+            var result = changingValueExtractor.ExtractChangingValue(ref input);
 
             Assert.Equal("kemalettin erbaş yanyatmaz düzkalkmazdır", result);
         }
@@ -33,7 +36,9 @@ namespace StringFighter.StringExtractors.Tests
         {
             ChangingValueExtractor changingValueExtractor = new ChangingValueExtractor("{} adlı şahıs gerçek anlamda bir yalancıdır!");
 
-            var result = changingValueExtractor.ExtractChangingValue("nizamettin ucsuzhayalgücü adlı şahıs gerçek anlamda bir yalancıdır!");
+            var input = "nizamettin ucsuzhayalgücü adlı şahıs gerçek anlamda bir yalancıdır!";
+
+            var result = changingValueExtractor.ExtractChangingValue(ref input);
 
             Assert.Equal("nizamettin ucsuzhayalgücü", result);
         }
@@ -43,7 +48,9 @@ namespace StringFighter.StringExtractors.Tests
         {
             ChangingValueExtractor changingValueExtractor = new ChangingValueExtractor("Sahi {}'da bizimle gelecek mi?");
 
-            var exception = Record.Exception(() => changingValueExtractor.ExtractChangingValue("Sahi nizamettinde geliyo mu?"));
+            var input = "Sahi nizamettinde geliyo mu?";
+
+            var exception = Record.Exception(() => changingValueExtractor.ExtractChangingValue(ref input));
 
             Assert.IsType<ValueNotValidForTemplateException>(exception);
         }
@@ -64,9 +71,13 @@ namespace StringFighter.StringExtractors.Tests
         {
             var changingValuExtractor = new ChangingValueExtractor("blab {} labla");
 
-            var whenSpaceException = Record.Exception(() => changingValuExtractor.ExtractChangingValue(""));
+            var spaceInput = " ";
 
-            var whenNullException = Record.Exception(() => changingValuExtractor.ExtractChangingValue(null));
+            string nullInput = null;
+
+            var whenSpaceException = Record.Exception(() => changingValuExtractor.ExtractChangingValue(ref spaceInput));
+
+            var whenNullException = Record.Exception(() => changingValuExtractor.ExtractChangingValue(ref nullInput));
 
             Assert.IsType<ArgumentException>(whenSpaceException);
             Assert.IsType<ArgumentException>(whenNullException);

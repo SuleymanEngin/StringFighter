@@ -22,12 +22,12 @@ namespace StringFighter.StringExtractors
             changingValueAfterValue = value.ElementAtOrDefault(1) ?? "";
         }
 
-        public string ExtractChangingValue(string value)
+        public string ExtractChangingValue(ref string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 throw new ArgumentException("I need a value dude!");
 
-            var valueIsValidForTemplate = CheckValueValidateForTemplate(value);
+            var valueIsValidForTemplate = CheckValueValidateForTemplate(ref value);
 
             if (!valueIsValidForTemplate)
                 throw new ValueNotValidForTemplateException(nameof(value));
@@ -39,7 +39,7 @@ namespace StringFighter.StringExtractors
             return result;
         }
 
-        private bool CheckValueValidateForTemplate(string value)
+        private bool CheckValueValidateForTemplate(ref string value)
         {
 
             if (!(changingValueBeforeValue == value[0..changingValueBeforeValue.Length]))
