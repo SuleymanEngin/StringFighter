@@ -6,9 +6,9 @@ namespace StringFighter.StringExtractors
 {
     public class ChangingValueExtractor
     {
-        string changingValueBeforeValue;
+        private readonly string _changingValueBeforeValue;
 
-        string changingValueAfterValue;
+        private readonly string _changingValueAfterValue;
 
         public ChangingValueExtractor(string template)
         {
@@ -17,9 +17,9 @@ namespace StringFighter.StringExtractors
 
             var value = template.Split("{}");
 
-            changingValueBeforeValue = value.ElementAtOrDefault(0) ?? "";
+            _changingValueBeforeValue = value.ElementAtOrDefault(0) ?? "";
 
-            changingValueAfterValue = value.ElementAtOrDefault(1) ?? "";
+            _changingValueAfterValue = value.ElementAtOrDefault(1) ?? "";
         }
 
         public string ExtractChangingValue(ref string value)
@@ -32,9 +32,9 @@ namespace StringFighter.StringExtractors
             if (!valueIsValidForTemplate)
                 throw new ValueNotValidForTemplateException(nameof(value));
 
-            var changingValueAfterValueStartIndex = value.Length - changingValueAfterValue.Length;
+            var changingValueAfterValueStartIndex = value.Length - _changingValueAfterValue.Length;
 
-            var result = value[changingValueBeforeValue.Length..changingValueAfterValueStartIndex];
+            var result = value[_changingValueBeforeValue.Length..changingValueAfterValueStartIndex];
 
             return result;
         }
@@ -42,12 +42,12 @@ namespace StringFighter.StringExtractors
         private bool CheckValueValidateForTemplate(ref string value)
         {
 
-            if (!(changingValueBeforeValue == value[0..changingValueBeforeValue.Length]))
+            if (!(_changingValueBeforeValue == value[0.._changingValueBeforeValue.Length]))
                 return false;
 
-            var changingValueAfterValueStartIndex = value.Length - changingValueAfterValue.Length;
+            var changingValueAfterValueStartIndex = value.Length - _changingValueAfterValue.Length;
 
-            if (!(changingValueAfterValue == value[changingValueAfterValueStartIndex..value.Length]))
+            if (!(_changingValueAfterValue == value[changingValueAfterValueStartIndex..value.Length]))
                 return false;
 
             return true;

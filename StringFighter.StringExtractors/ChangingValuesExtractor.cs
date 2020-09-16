@@ -2,12 +2,13 @@
 using StringFighter.StringExtractors.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StringFighter.StringExtractors
 {
     public class ChangingValuesExtractor
     {
-        string[] _staticValues;
+        private readonly string[] _staticValues;
 
         public ChangingValuesExtractor(ref string template)
         {
@@ -35,9 +36,10 @@ namespace StringFighter.StringExtractors
 
                 var changingValue = value[startIndex..staticValueIndex];
 
-                changingValues.Add(changingValue);
-
                 startIndex = staticValueIndex + staticValue.Length;
+
+                if (changingValue != string.Empty)
+                    changingValues.Add(changingValue);
             }
 
             if (startIndex < value.Length)

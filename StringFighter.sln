@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0EE33FB3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringFighter.StringExtractors.Tests", "StringFighter.StringExtractors.Tests\StringFighter.StringExtractors.Tests\StringFighter.StringExtractors.Tests.csproj", "{5E66304E-1CE9-4D7A-AA23-98453C034EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Executer", "Executer\Executer.csproj", "{D5749700-4591-429F-8503-0534613AC1B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Executer", "Executer\Executer.csproj", "{D5749700-4591-429F-8503-0534613AC1B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
