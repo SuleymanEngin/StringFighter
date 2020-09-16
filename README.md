@@ -37,7 +37,7 @@ ChangingValueExtractor extracts the changed value within a string template.
 <img src="Assets/ChangingValueExtractorResult.PNG" alt="ChangingValueExtractorResult">
 
 
-:rabbit2: **ChangingValuesExtractor**
+:rabbit2: **ChangingValue(S)Extractor**
 
 
 "ChangingValue(S)Extractor" does almost the same as "ChangingValueExtractor"
