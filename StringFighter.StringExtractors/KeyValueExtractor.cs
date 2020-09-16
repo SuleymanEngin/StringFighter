@@ -33,7 +33,7 @@ namespace StringFighter.StringExtractors
         /// <param name="key">target value's key.</param>
         /// <exception cref="System.ArgumentNullException"
         /// <exception cref="System.ArgumentOutOfRangeException"
-        public string GetValueByKeyFromString(ref string source, string key)
+        public string ExtractValueByKeyFromString(ref string source, string key)
         {
             if (source is null)
                 throw new ArgumentNullException(nameof(source));
